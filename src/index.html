@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Antons schmemories</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div id="title">
+    <!-- Importing in this manner might not be optimal but it is faster -->
+    <img
+      src="https://www.flaticon.com/svg/vstatic/svg/994/994195.svg?token=exp=1612914976~hmac=c48c82d95ae83dcf0a72cf52f17b2fa4"
+      alt="">
+    <h1>Hello this is a memory game</h1>
+    <img
+      src="https://www.flaticon.com/svg/vstatic/svg/882/882998.svg?token=exp=1612915077~hmac=737b25db3e9bf734d045da602bfb0147"
+      alt="">
+  </div>
+
+  <form id="gridForm">
+    <div>
+      <div>
+        <label for="gridSizeInputCol">Columns</label>
+        <input id="gridSizeInputCol" name="gridSizeInputCol" type="number" value="2">
+      </div>
+      <div>
+        <label for="gridSizeInputRow">Rows</label>
+        <input id="gridSizeInputRow" name="gridSizeInputRow" type="number" value="2">
+      </div>
+    </div>
+    <button type="submit">Start</button>
+  </form>
+
+  <!-- div to generate the grid in from javascript -->
+  <div id="grid"></div>
+
+  <!-- Hidden below the screen until game finishes -->
+  <div id="trophy">
+    <img
+      src="https://www.flaticon.com/svg/vstatic/svg/3112/3112946.svg?token=exp=1612913367~hmac=cee03aafcea8fd4aec72f41361b32ee9"
+      alt="Trophy for your troubles">
+    <h2 id="trophyText"></h2>
+  </div>
+
+</body>
+
+</html>

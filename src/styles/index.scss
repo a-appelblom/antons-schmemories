@@ -1,0 +1,140 @@
+// variables to set the grid throug javascript later
+:root {
+    --grid-cols: 2;
+    --grid-rows: 2;
+}
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    width: 100%;
+    height: 100vh; // set to be able to have a good overview of the board at all times
+    padding-left: 4rem;
+    padding-right: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: yellowgreen;
+    overflow: hidden; // prevents the trophy from distorting the page
+    font-family: indie flower, sans serif;
+}
+
+#title {
+    width: 50%;
+    text-align: center;
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 6rem;
+
+    h1 {
+        font-size: 3rem;
+    }
+}
+
+form {
+    display: flex;
+    width: 75%;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+
+    div {
+        display: flex;
+        flex-direction: column;
+
+
+        div {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+
+    input {
+        width: 3rem;
+        height: 2rem;
+        font-size: 1.5rem;
+        margin-left: 1rem;
+    }
+
+    button {
+        font-family: indie flower, sans serif;
+        font-size: large;
+        font-weight: bolder;
+        width: 6rem;
+        border-radius: 10px;
+        padding: 0.5rem;
+        margin-left: 8rem;
+    }
+}
+
+// The flip effect
+.flip {
+    transform: rotateY(180deg);
+}
+
+#grid {
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+    display: grid;
+    gap: 1rem;
+    justify-items: center;
+
+    // set the grid dynamically
+    grid-template-rows: repeat(var(--grid-rows), 1fr);
+    grid-template-columns: repeat(var(--grid-cols), 1fr);
+
+    .card {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            border-radius: 1rem;
+            transition: transform 1s;
+            position: absolute;
+            backface-visibility: hidden;
+            height: 100%;
+            max-width: 100%;
+        }
+    }
+}
+
+#trophy {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    bottom: -75vh;
+    height: 75vh;
+    width: 50%;
+    transition: transform 3s;
+
+    img {
+        height: 75%;
+        width: 100%;
+    }
+
+    h2 {
+        text-align: center;
+        color: red;
+        font-size: 3rem;
+        margin-top: 2rem;
+        background-color: rgba(255, 255, 255, 0.4);
+    }
+}
+
+.trophyAscend {
+    transform: translateY(-95vh);
+}
